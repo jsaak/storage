@@ -1,15 +1,15 @@
 # Storage
 ```
-Two double linked lists on one static heap.
-The first is called data, the other is called empty.
+A queue for microcontrollers: Two double linked lists sitting on a static array implemented in c.
+The first list is called data, the other list is called empty.
 Initially data does not have any elements, empty has them all.
 When you insert a data element, it gets removed from empty list, and vice versa.
 
-The library does not allocate memory.
+The library does not allocate memory (no malloc()).
 So it can be used in restrained environments such as a microcontroller.
 
 There is no safety net.
-For example when the queue is full inserting will silently fail.
+For example when the queue is full, inserting will silently fail.
 
 Currently these functions are implemented:
 
@@ -22,7 +22,7 @@ inserting between two nodes is not implemented, but should not be very hard
 ```
 
 # Example code
-[test.c](test.c)
+Code can be found here: [test.c](test.c)
 You can inspect the library internals by running it
 ```
 $ make
